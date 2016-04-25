@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # Copyright (c) 2013 Felipe Gallego. All rights reserved.
 #
@@ -15,8 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""
-This module read Java properties files and show the values of
+"""This module read Java properties files and show the values of
 all the properties for each file.
 This utility allows an easy comparison of parameters values and the
 identification of parameters used in a file and not used in others.
@@ -34,8 +34,8 @@ FILE_NAME = 'FILE NAME'
 NONE_TEXT = 'THIS_PARAMETER_DOES_NOT_EXIST'
 
 def process_program_arguments():
-    """ Process the program arguments to retrieve the names of
-        the properties files to use.
+    """Process the program arguments to retrieve the names of
+    the properties files to use.
     """
     
     print "Processing program arguments... "
@@ -53,8 +53,8 @@ def process_program_arguments():
     return args
 
 def process_prop_line(line):
-    """ Process a line of a properties file to retrieve the parameter
-        name and value if it exists.
+    """Process a line of a properties file to retrieve the parameter
+    name and value if it exists.
     """    
     
     prop = None
@@ -81,8 +81,8 @@ def process_prop_line(line):
     return prop
 
 def read_properties_file(prop_file):
-    """ Process a line of a properties file to retrieve the parameter
-        name and value if it exists.
+    """Process a line of a properties file to retrieve the parameter
+    name and value if it exists.
     """ 
         
     # Properties are saved as a dictionary.
@@ -104,8 +104,8 @@ def read_properties_file(prop_file):
     return properties
 
 def write_comparison(header, properties_names, properties_values, out_file):
-    """ Write to a CSV file all the values found for each parameter
-        in all the properties files.
+    """Write to a CSV file all the values found for each parameter
+    in all the properties files.
     """     
     
     with open(out_file, 'wb') as f:
@@ -129,8 +129,8 @@ def write_comparison(header, properties_names, properties_values, out_file):
     print "Results saved in file: %s" % out_file
 
 def compare_properties(properties_sets, prop_files, out_file):    
-    """ For all the properties found in any properties file,
-        get the value that takes in each file.
+    """For all the properties found in any properties file,
+    get the value that takes in each file.
     """   
         
     properties_names = []
@@ -182,7 +182,7 @@ def compare_properties(properties_sets, prop_files, out_file):
     write_comparison(header, properties_names, properties_values, out_file)        
 
 def process_properties_files(prop_files, out_file):
-    """ Process all the properties files. """
+    """Process all the properties files. """
            
     properties_sets = []
     
